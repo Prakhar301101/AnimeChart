@@ -27,6 +27,7 @@ body{
 
 
 .animecard {
+  min-height: 480px;
   background:#F6F1F1;
   border-radius: 1rem;
   padding: 2rem;
@@ -46,9 +47,14 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 1;
+  opacity: 1; 
 }
 
+.animeimg img{
+  width: 100%;
+  object-fit: fill;
+  border-radius: 7px ;
+}
 .animeimg :hover{
   opacity: 0.8;
 }
@@ -64,11 +70,12 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  color:aliceblue;
   font-size: 1.2em;
+  color: aliceblue;
 }
 .bottom-container a{
   text-decoration: none;
+  color:aliceblue;
 }
 
 .bottom-container a:visited{

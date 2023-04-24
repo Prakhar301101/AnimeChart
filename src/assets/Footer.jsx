@@ -7,7 +7,7 @@ export default function Footer() {
 
   return (
     <div className="bottom-container">
-      <a target="_blank" href='https://github.com/Prakhar301101'>© Prakhar Pandey {year}</a>
+      ©<a target="_blank" href='https://github.com/Prakhar301101'> &nbsp; &nbsp;Prakhar Pandey&nbsp;&nbsp;</a>{year}
     </div>
   )
 }
