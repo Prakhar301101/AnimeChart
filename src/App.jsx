@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Anime from "./assets/Anime";
 import Header from "./assets/Header";
-import Footer from "./assets/footer";
+import Footer from "./assets/Footer";
 import "./main.css";
 
 const date = new Date();
