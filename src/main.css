@@ -1,0 +1,77 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family:"helvetica neue", Helvetica, Roboto, Arial, sans-serif; 
+  background:#19A7CE;
+  color: #222;
+}
+
+.animecards {
+  width: 90vw;
+  max-width: 1170px;
+  margin: 5rem auto;
+  display: grid;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .animecards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+.animecard {
+  background:#F6F1F1;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+
+.head{
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #F6F1F1;
+}
+
+.animeimg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}
+
+.animeimg :hover{
+  opacity: 0.8;
+}
+
+.animetitle{
+  margin-top: 1rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.bottom-container{
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:aliceblue;
+  font-size: 1.2em;
+}
+.bottom-container a{
+  text-decoration: none;
+}
+
+.bottom-container a:visited{
+  text-decoration: none;
+  color:aliceblue;
+}
