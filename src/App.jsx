@@ -36,7 +36,6 @@ function App() {
         <Header Season={season} Year={year} />
         <div className="animecards">
           {animeData.map((cur) => {
-            console.log(cur);
             return (
               <Anime
                 air={cur.broadcast.string}
