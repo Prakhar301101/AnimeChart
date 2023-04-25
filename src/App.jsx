@@ -29,15 +29,17 @@ function App() {
     getData();
   }, []);
 
-  console.log(animeData);
+
   return (
     <div>
       <div>
         <Header Season={season} Year={year} />
         <div className="animecards">
           {animeData.map((cur) => {
+            console.log(cur);
             return (
               <Anime
+                air={cur.broadcast.string}
                 linkmal={cur.url}
                 linkimg={cur.images.jpg.image_url}
                 title={cur.title}

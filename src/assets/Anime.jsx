@@ -3,6 +3,7 @@ import React from "react";
 function Image(props) {
   return (
     <div className="animeimg">
+      <h3>{props.Air}</h3>
       <a target="_blank" href={props.linkMal}>
         <img src={props.linkImg}></img>
       </a>
@@ -20,7 +21,9 @@ function Title(props) {
 function Anime(props) {
   return (
     <div className="animecard">
-      <Image linkMal={props.linkmal} linkImg={props.linkimg} />
+      <Image 
+      Air={props.air}
+      linkMal={props.linkmal} linkImg={props.linkimg} />
       <Title name={props.title} />
     </div>
   );
