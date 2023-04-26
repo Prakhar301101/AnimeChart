@@ -19,13 +19,13 @@ const finalurl = api + year + "/" + season;
 
 function App() {
   const [animeData, setanimeData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const getData = async () => {
-    const res = await fetch(finalurl);
-    const resData = await res.json();
-    setanimeData(resData.data);
-    setLoading(true);
+    await fetch(finalurl).then((res)=>res.json())
+    .then((resData)=>{
+      setanimeData(resData.data)
+    }).then(()=>setLoading(false))
   };
 
   useEffect(() => {
@@ -35,6 +35,10 @@ function App() {
   return (
     <div>
       {loading ? (
+        <div className="load">
+          <h1>Loading....</h1>
+        </div>
+      ) : (
         <div>
           <Header Season={season} Year={year} />
           <div className="animecards">
@@ -52,8 +56,6 @@ function App() {
           </div>
           <Footer />
         </div>
-      ) : (
-        <div className="load"><h1>Loading....</h1></div>
       )}
     </div>
   );
