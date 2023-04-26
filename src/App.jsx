@@ -19,8 +19,8 @@ const finalurl = api + year + "/" + season;
 
 function App() {
   const [animeData, setanimeData] = useState([]);
-  const [loading, setLoading]=useState(false);
-  
+  const [loading, setLoading] = useState(false);
+
   const getData = async () => {
     const res = await fetch(finalurl);
     const resData = await res.json();
@@ -32,25 +32,30 @@ function App() {
     getData();
   }, []);
 
-
   return (
-      <div>
-        <Header Season={season} Year={year} />
-       {loading?( <div className="animecards">
-          {animeData.map((cur) => {
-            return (
-              <Anime
-                air={cur.broadcast.string}
-                linkmal={cur.url}
-                linkimg={cur.images.jpg.image_url}
-                title={cur.title}
-                key={cur.mal_id}
-              />
-            );
-          })}
-        </div>):(<div className="load"><h1>Loading....</h1></div>)}
-        <Footer />
-      </div>
+    <div>
+      {loading ? (
+        <div>
+          <Header Season={season} Year={year} />
+          <div className="animecards">
+            {animeData.map((cur) => {
+              return (
+                <Anime
+                  air={cur.broadcast.string}
+                  linkmal={cur.url}
+                  linkimg={cur.images.jpg.image_url}
+                  title={cur.title}
+                  key={cur.mal_id}
+                />
+              );
+            })}
+          </div>
+          <Footer />
+        </div>
+      ) : (
+        <div className="load"><h1>Loading....</h1></div>
+      )}
+    </div>
   );
 }
 
