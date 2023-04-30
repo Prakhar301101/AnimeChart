@@ -22,10 +22,12 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   const getData = async () => {
-    await fetch(finalurl).then((res)=>res.json())
-    .then((resData)=>{
-      setanimeData(resData.data)
-    }).then(()=>setLoading(false))
+    await fetch(finalurl)
+      .then((res) => res.json())
+      .then((resData) => {
+        setanimeData(resData.data);
+        setLoading(false);
+      });
   };
 
   useEffect(() => {
@@ -33,31 +35,28 @@ function App() {
   }, []);
 
   return (
-    <section>
-      {loading ? (
+    <div>
+      {loading && (
         <div className="load">
           <h1>Loading....</h1>
         </div>
-      ) : (
-        <div>
-          <Header Season={season} Year={year} />
-          <div className="animecards">
-            {animeData.map((cur) => {
-              return (
-                <Anime
-                  air={cur.broadcast.string}
-                  linkmal={cur.url}
-                  linkimg={cur.images.jpg.image_url}
-                  title={cur.title}
-                  key={cur.mal_id}
-                />
-              );
-            })}
-          </div>
-          <Footer />
-        </div>
       )}
-    </section>
+      <Header Season={season} Year={year} />
+      <div className="animecards">
+        {animeData.map((cur) => {
+          return (
+            <Anime
+              air={cur.broadcast.string}
+              linkmal={cur.url}
+              linkimg={cur.images.jpg.image_url}
+              title={cur.title}
+              key={cur.mal_id}
+            />
+          );
+        })}
+      </div>
+      <Footer />
+    </div>
   );
 }
 
