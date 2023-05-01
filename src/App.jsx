@@ -26,13 +26,15 @@ function App() {
       .then((res) => res.json())
       .then((resData) => {
         setanimeData(resData.data);
+      })
+      .then(() => {
         setloading(false);
       });
   };
 
   useEffect(() => {
     getData();
-  },[]);
+  }, []);
 
   return (
     <>
