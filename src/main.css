@@ -70,6 +70,10 @@ body{
   overflow: hidden;
 }
 
+.animetitle h2{
+  word-wrap: break-word;
+}
+
 .load{
   display: flex;
   justify-content: center;
