@@ -32,31 +32,34 @@ function App() {
 
   useEffect(() => {
     getData();
-  }, []);
+  });
 
   return (
-    <div>
-      {loading && (
+    <>
+      {loading ? (
         <div className="load">
           <h1>Loading....</h1>
         </div>
+      ) : (
+        <div>
+          <Header Season={season} Year={year} />
+          <div className="animecards">
+            {animeData.map((cur) => {
+              return (
+                <Anime
+                  air={cur.broadcast.string}
+                  linkmal={cur.url}
+                  linkimg={cur.images.jpg.image_url}
+                  title={cur.title}
+                  key={cur.mal_id}
+                />
+              );
+            })}
+          </div>
+          <Footer />
+        </div>
       )}
-      <Header Season={season} Year={year} />
-      <div className="animecards">
-        {animeData.map((cur) => {
-          return (
-            <Anime
-              air={cur.broadcast.string}
-              linkmal={cur.url}
-              linkimg={cur.images.jpg.image_url}
-              title={cur.title}
-              key={cur.mal_id}
-            />
-          );
-        })}
-      </div>
-      <Footer />
-    </div>
+    </>
   );
 }
 
