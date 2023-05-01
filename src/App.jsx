@@ -19,20 +19,20 @@ const finalurl = api + year + "/" + season;
 
 function App() {
   const [animeData, setanimeData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setloading] = useState(true);
 
   const getData = async () => {
     await fetch(finalurl)
       .then((res) => res.json())
       .then((resData) => {
         setanimeData(resData.data);
-        setLoading(false);
+        setloading(false);
       });
   };
 
   useEffect(() => {
     getData();
-  });
+  },[]);
 
   return (
     <>
