@@ -38,13 +38,13 @@ function App() {
 
   return (
     <>
-      {loading ? (
+        <div>
+          <Header Season={season} Year={year} />
+         { loading ? (
         <div className="load">
           <h1>Loading....</h1>
         </div>
       ) : (
-        <div>
-          <Header Season={season} Year={year} />
           <div className="animecards">
             {animeData.map((cur) => {
               return (
@@ -58,9 +58,9 @@ function App() {
               );
             })}
           </div>
+         )}
           <Footer />
         </div>
-      )}
     </>
   );
 }

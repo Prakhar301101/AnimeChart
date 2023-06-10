@@ -41,6 +41,22 @@ body{
   justify-content: center;
   font-size: 1.5rem;
   color: #F6F1F1;
+  gap: 10px;
+}
+
+.head button{
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: #f1f1f1;
+    color: #000000;
+    font-size: 24px;
+    cursor: pointer;
+}
+.head button:hover{
+  opacity: 0.75;
 }
 
 .animeimg{
