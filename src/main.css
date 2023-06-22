@@ -36,6 +36,8 @@ body{
 
 .head{
   margin-top: 50px;
+  margin-left: 12px;
+  margin-right: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,8 +46,8 @@ body{
   gap: 10px;
 }
 
-.head button{
-
+.head_container button{
+    margin-top: 50px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -55,8 +57,14 @@ body{
     font-size: 24px;
     cursor: pointer;
 }
-.head button:hover{
+.head_container button:hover{
   opacity: 0.75;
+}
+
+.head_container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .animeimg{
