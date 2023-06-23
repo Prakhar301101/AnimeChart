@@ -46,6 +46,12 @@ body{
   gap: 10px;
 }
 
+@media screen and (max-width: 380px) {
+  .head {
+    font-size: 1.25rem;
+  }
+}
+
 .head_container button{
     margin-top: 50px;
     width: 40px;
