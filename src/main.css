@@ -12,9 +12,9 @@ body{
 }
 
 .animecards {
-  width: 90vw;
+  width: 95vw;
   max-width: 1170px;
-  margin: 5rem auto;
+  margin: 10px auto;
   display: grid;
   gap: 2rem;
 }
@@ -25,35 +25,37 @@ body{
   }
 }
 
+@media screen and (min-width: 480px) and (max-width:768px){
+  .animecards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 
 .animecard {
   min-height: 480px;
   background:#F6F1F1;
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 
 .head{
-  margin-top: 50px;
-  margin-left: 12px;
-  margin-right: 12px;
+  padding: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
   color: #F6F1F1;
-  gap: 10px;
 }
 
-@media screen and (max-width: 380px) {
-  .head {
-    font-size: 1.25rem;
+@media only screen and (max-width: 480px) {
+  .head{
+    font-size: 1rem;
   }
 }
 
 .head_container button{
-    margin-top: 50px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
